@@ -1,129 +1,152 @@
-/* Add a background color and font family to the whole page */
-body {
-  background-color: #f6f6f6;
-  font-family: Arial, sans-serif;
-}
-
-/* Style the header */
-header {
-  background-color: #fff;
-  padding: 20px;
-  text-align: center;
-}
-
-header h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-header p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-}
-
-header button {
-  background-color: #2e8b57;
-  border: none;
-  border-radius: 20px;
-  color: #fff;
-  font-size: 1.2rem;
-  padding: 10px 30px;
-}
-
-header button:hover {
-  background-color: #3cb371;
-  cursor: pointer;
-}
-
-/* Style the navigation menu */
-nav ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
+/* Set up basic styling */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-nav li {
-  margin: 0 10px;
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
-nav a {
-  color: #000;
+/* Header section */
+.header {
+  background-color: #5d5cff;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.header__logo {
+  font-size: 24px;
+  font-weight: 700;
+  margin-right: 20px;
+}
+
+.header__nav {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.header__nav-link {
+  color: #fff;
+  margin-left: 30px;
   text-decoration: none;
 }
 
-nav a:hover {
+.header__nav-link:hover {
   text-decoration: underline;
 }
 
-/* Style the main content */
-main {
-  margin: 40px auto;
-  max-width: 800px;
-  padding: 0 20px;
+/* Hero section */
+.hero {
+  background-image: url("https://dummyimage.com/1600x900/4d4d4d/fff");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 100px 20px;
 }
 
-section {
+.hero__content {
+  max-width: 600px;
+  text-align: center;
+}
+
+.hero__title {
+  font-size: 54px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero__subtitle {
+  font-size: 24px;
   margin-bottom: 40px;
 }
 
-section h2 {
-  font-size: 2rem;
+.hero__button {
+  background-color: #5d5cff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 15px 40px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.hero__button:hover {
+  background-color: #4444ff;
+}
+
+/* Features section */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 100px 0;
+  padding: 0 20px;
+}
+
+.features__item {
+  flex-basis: calc(33.33% - 20px);
+  margin-bottom: 40px;
+  padding: 40px;
+}
+
+.features__item-icon {
+  font-size: 48px;
   margin-bottom: 20px;
 }
 
-section ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.features__item-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-section li {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+.features__item-text {
+  font-size: 18px;
+  line-height: 1.5;
 }
 
-section button {
-  background-color: #2e8b57;
-  border: none;
-  border-radius: 20px;
+/* Footer section */
+.footer {
+  background-color: #333;
   color: #fff;
-  font-size: 1.2rem;
-  padding: 10px 30px;
-}
-
-section button:hover {
-  background-color: #3cb371;
-  cursor: pointer;
-}
-
-/* Style the footer */
-footer {
-  background-color: #444;
-  color: #fff;
-  font-size: 1.2rem;
-  padding: 20px;
-  text-align: center;
-}
-
-footer ul {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  padding: 40px 20px;
 }
 
-footer li {
-  margin: 0 10px;
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-footer a {
+.footer__nav-link {
   color: #fff;
+  margin: 0 20px;
   text-decoration: none;
 }
 
-footer a:hover {
+.footer__nav-link:hover {
   text-decoration: underline;
 }
+
+.footer__text {
+  font-size: 16px;
+  margin-top: 20px;
+  text-align: center;
