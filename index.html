@@ -4,125 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Management SaaS Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-kzKnX9y+lZXK+3PJk2Gn1n0InaKjrc/dN5p5R5l5lY1cOhxdKjG+q3Qww1d0MLUbZjcaPZ4U4AfnsFqiLbU6OQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <!-- Header section -->
-    <header class="header">
-      <a href="#" class="header__logo">User Management</a>
-      <nav class="header__nav">
-        <a href="#" class="header__nav-link">Home</a>
-        <a href="#" class="header__nav-link">Features</a>
-        <a href="#" class="header__nav-link">Pricing</a>
-        <a href="#" class="header__nav-link">Contact</a>
-        <a href="#" class="header__nav-link">Login</a>
-        <a href="#" class="header__nav-link">Sign up</a>
-      </nav>
-    </header>
+
+    <!-- Navigation section -->
+    <nav class="nav">
+      <a href="#" class="nav__logo">User Management</a>
+      <div class="nav__menu">
+        <a href="#" class="nav__menu-link">Features</a>
+        <a href="#" class="nav__menu-link">Pricing</a>
+        <a href="#" class="nav__menu-link">About</a>
+        <a href="#" class="nav__menu-link">Contact</a>
+      </div>
+      <div class="nav__cta">
+        <a href="#" class="nav__cta-link">Sign In</a>
+        <a href="#" class="nav__cta-button">Sign Up</a>
+      </div>
+    </nav>
 
     <!-- Hero section -->
     <section class="hero">
       <div class="hero__content">
-        <h1 class="hero__title">Powerful User Management Platform</h1>
-        <p class="hero__subtitle">Effortlessly manage users, groups, and permissions with our intuitive platform</p>
-        <a href="#" class="hero__button">Get started</a>
+        <h1 class="hero__title">Effortlessly manage your users with User Management</h1>
+        <p class="hero__text">Our user-friendly platform makes it easy to manage users, groups, and permissions. Sign up for a free trial today and see the difference for yourself.</p>
+        <a href="#" class="hero__button">Get Started</a>
       </div>
+      <img src="hero.jpg" alt="Hero Image" class="hero__image">
     </section>
 
     <!-- Features section -->
     <section class="features">
-      <div class="features__item">
-        <i class="fas fa-users features__item-icon"></i>
-        <h2 class="features__item-title">User Management</h2>
-        <p class="features__item-text">Efficiently manage users and their permissions with our easy-to-use interface. Set up custom groups and access levels for greater control and flexibility.</p>
-      </div>
-      <div class="features__item">
-        <i class="fas fa-lock features__item-icon"></i>
-        <h2 class="features__item-title">Security</h2>
-        <p class="features__item-text">Protect your sensitive data with our advanced security measures. Our platform is designed with the latest encryption and authentication technologies to ensure your data is always safe.</p>
-      </div>
-      <div class="features__item">
-        <i class="fas fa-file-alt features__item-icon"></i>
-        <h2 class="features__item-title">Reporting</h2>
-        <p class="features__item-text">Get detailed reports on user activity and system usage. Monitor and track performance metrics to ensure your platform is running at peak efficiency.</p>
-      </div>
-      <div class="features__item">
-        <i class="fas fa-cogs features__item-icon"></i>
-        <h2 class="features__item-title">Integration</h2>
-        <p class="features__item-text">Integrate seamlessly with your existing software stack. Our platform offers a wide range of APIs and plugins to ensure easy integration with your favorite tools.</p>
-      </div>
-      <div class="features__item">
-        <i class="fas fa-shield-alt features__item-icon"></i>
-        <h2 class="features__item-title">Compliance</h2>
-        <p class="features__item-text">Stay compliant with industry standards and regulations. Our platform is built to ensure compliance with the latest data privacy and security standards.</
-    </section>
-
-    <!-- About section -->
-    <section class="about">
-      <div class="about__content">
-        <h2 class="about__title">About Us</h2>
-        <p class="about__text">At User Management, we're dedicated to providing the most comprehensive and user-friendly platform for managing users, groups, and permissions. Our platform is designed to meet the needs of businesses of all sizes, and we're committed to providing the highest level of security and compliance.</p>
-        <p class="about__text">Our team of experts has years of experience in user management and software development, and we're passionate about helping businesses streamline their operations and achieve their goals. We believe that with the right tools and support, any business can achieve success.</p>
-      </div>
-      <div class="about__image-container">
-        <img src="about.jpg" alt="About Us" class="about__image">
-      </div>
-    </section>
-
+      <h2 class="features__title">Why Choose User Management?</h2>
+      <div class="features__container">
+        <div class="features__item">
+          <i class="fas fa-shield-alt features__icon"></i>
+          <h3 class="features__item-title">Security</h3>
+          <p class="features__item-text">Our platform is designed with security in mind. We use industry-leading encryption and regularly update our systems to ensure your data is safe.</p>
+        </div>
+        <div class="features__item">
+          <i class="fas fa-user features__icon"></i>
+          <h3 class="features__item-title">User Management</h3>
+          <p class="features__item-text">Our platform makes it easy to manage users, groups, and permissions. Say goodbye to tedious manual work and hello to streamlined user management.</p>
+        </div>
+        <div class="features__item">
+          <i class="fas fa-chart-line features__icon"></i>
+          <h3 class="features__item-title">Analytics</h3>
+          <p class="features__item-text">Our reporting and analytics features give you insights into
+the activity on your platform, so you can make informed decisions about how to optimize and improve your user management processes.</p>
+</div>
+</div>
+</section>
     <!-- Testimonials section -->
-    <section class="testimonials">
-      <h2 class="testimonials__title">What Our Customers Say</h2>
-      <div class="testimonials__slider">
-        <div class="testimonials__slide">
-          <p class="testimonials__text">"User Management has made it easy for us to manage our users and permissions. The platform is intuitive and user-friendly, and the support team has been extremely helpful in answering any questions we have."</p>
-          <div class="testimonials__author">
-            <img src="testimonial1.jpg" alt="Testimonial 1" class="testimonials__author-image">
-            <div class="testimonials__author-details">
-              <h3 class="testimonials__author-name">John Smith</h3>
-              <p class="testimonials__author-job">CEO, Acme Corp</p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonials__slide">
-          <p class="testimonials__text">"We've been using User Management for several months now and it's been a game-changer for our business. The platform has saved us countless hours of manual work, and the reporting features have helped us better understand our users and their behavior."</p>
-          <div class="testimonials__author">
-            <img src="testimonial2.jpg" alt="Testimonial 2" class="testimonials__author-image">
-            <div class="testimonials__author-details">
-              <h3 class="testimonials__author-name">Sarah Johnson</h3>
-              <p class="testimonials__author-job">VP of Operations, XYZ Inc</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="testimonials">
+  <h2 class="testimonials__title">What Our Customers Say</h2>
+  <div class="testimonials__container">
+    <div class="testimonials__card">
+      <p class="testimonials__text">"User Management has been a game-changer for our business. We're now able to manage our users and permissions more efficiently than ever before."</p>
+      <img src="testimonials-1.jpg" alt="Testimonial 1" class="testimonials__image">
+      <h3 class="testimonials__name">John Doe</h3>
+      <p class="testimonials__company">Acme Corporation</p>
+    </div>
+    <div class="testimonials__card">
+      <p class="testimonials__text">"The reporting and analytics features in User Management have helped us to identify areas for improvement and optimize our user management processes."</p>
+      <img src="testimonials-2.jpg" alt="Testimonial 2" class="testimonials__image">
+      <h3 class="testimonials__name">Jane Smith</h3>
+      <p class="testimonials__company">Globex Corporation</p>
+    </div>
+  </div>
+</section>
 
-    <!-- Call-to-action section -->
-    <section class="cta">
-      <h2 class="cta__title">Ready to get started?</h2>
-      <p class="cta__subtitle">Sign up for a free trial today and experience the power of User Management.</p>
-      <a href="#" class="cta__button">Sign up</a>
-    </section>
+<!-- Call to Action section -->
+<section class="cta">
+  <h2 class="cta__title">Ready to streamline your user management?</h2>
+  <a href="#" class="cta__button">Get Started</a>
+</section>
 
-    <!-- Footer section -->
-    <footer class="footer">
-      <div class="footer__logo-container">
-        <a href="#" class="footer__logo">User Management</a>
-      </div>
-      <nav class="footer__nav">
-        <a href="#" class="footer__nav-link">Home</a>
-        <a href="#" class="footer__nav-link">Features</a>
-        <a href="#" class="
-        <a href="#" class="footer__nav-link">Pricing</a>
-        <a href="#" class="footer__nav-link">About Us</a>
-        <a href="#" class="footer__nav-link">Contact Us</a>
-      </nav>
-      <div class="footer__social">
-        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-      <p class="footer__text">© 2023 User Management. All rights reserved.</p>
-    </footer>
-
-  </body>
+<!-- Footer section -->
+<footer class="footer">
+  <nav class="footer__nav">
+    <a href="#" class="footer__nav-link">Features</a>
+    <a href="#" class="footer__nav-link">Pricing</a>
+    <a href="#" class="footer__nav-link">About Us</a>
+    <a href="#" class="footer__nav-link">Contact Us</a>
+  </nav>
+  <div class="footer__social">
+    <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+  <p class="footer__text">© 2023 User Management. All rights reserved.</p>
+</footer>
+</body>
 </html>
