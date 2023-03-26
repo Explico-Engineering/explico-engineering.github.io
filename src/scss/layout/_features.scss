@@ -33,15 +33,15 @@
 .feature {
 	position: relative;
     padding: 16px;
-    width: 388px;
-    max-width: 388px;
+    width: 500px;
+    max-width: 500px;
     flex-grow: 1;
 }
 
 .feature-inner {
     position: relative;
     height: 100%;
-    background: color(bg, 1);
+    background: #FDFDFE;
     padding: 48px 24px 72px;
 
     &::before {
@@ -59,22 +59,22 @@
 .feature-icon {
 	position: relative;
     margin: 0 auto;
-	width: 88px;
-	height: 88px;
-	border-radius: 50%;
+	width: 64px;
+	height: 64px;
+	border-radius: 10px;
 
-	&::before {
-		content: '';
-		display: block;
-		background: color(bg, 1);
-		width: 64px;
-		height: 64px;
-		position: absolute;
-		top: 12px;
-		left: 12px;
-		border-radius: 50%;
-		box-shadow: 12px 24px 32px rgba(color(typography,1), .12);
-	}
+	// &::before {
+	// 	content: '';
+	// 	display: block;
+	// 	background: color(bg, 1);
+	// 	width: 64px;
+	// 	height: 64px;
+	// 	position: absolute;
+	// 	top: 12px;
+	// 	left: 12px;
+	// 	border-radius: 50%;
+	// 	box-shadow: 12px 24px 32px rgba(color(typography,1), .12);
+	// }
 
 	svg {
 		position: relative; /* To display the svg icon above the background color */
