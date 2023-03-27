@@ -106,13 +106,24 @@
 							<p class="hero-paragraph">We simplify the entire user management lifecycle.</p>
 							<div class="hero-form field field-grouped">
 								<div class="control control-expanded">
-									<input style="border-radius:10px;" class="input" type="email" name="email"
-										placeholder="Your best email&hellip;">
+									<input style="border-radius:10px;" class="input" type="email" required name="email"
+										id="emailform" placeholder="Your best email&hellip;">
 								</div>
 								<div class="control">
-									<a style="border-radius:10px;" class="button button-primary button-block"
-										href="#">Early access</a>
+									<button onclick="sendemail()" type="submit" style="border-radius:10px;"
+										class="button button-primary button-block">Early access</button>
 								</div>
+
+							</div>
+							<div id="formaterror" style="display: none;">
+								<p style="color:#cc5d62;padding:10px" class="section-paragraph">
+									Check Email Format
+								</p>
+							</div>
+							<div id="subsuccess" style="display: none;">
+								<p style="color:#272e69;padding:10px" class="section-paragraph">
+									Submission Received
+								</p>
 							</div>
 						</div>
 						<div class="hero-illustration">
@@ -539,102 +550,162 @@
 			<section style="padding-bottom:15vh" class="testimonials section">
 				<h2 class="section-title mt-0 text-center">Integrated Partners</h2>
 				<div class="slider">
-					<div  class="slide-track">
+					<div class="slide-track">
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/atlassian.png?sp=r&st=2022-06-14T17:58:49Z&se=2023-06-15T01:58:49Z&spr=https&sv=2021-06-08&sr=b&sig=SlgUfuUBRaarQYECZDlBHAf%2Fn%2FrJ3SK%2BRuYfOfjfTk4%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/atlassian.png?sp=r&st=2022-06-14T17:58:49Z&se=2023-06-15T01:58:49Z&spr=https&sv=2021-06-08&sr=b&sig=SlgUfuUBRaarQYECZDlBHAf%2Fn%2FrJ3SK%2BRuYfOfjfTk4%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/microsoft-logo-png-transparent.png?sp=r&st=2022-06-14T18:00:51Z&se=2023-06-15T02:00:51Z&spr=https&sv=2021-06-08&sr=b&sig=tLAB8IVpPzZAZk4Y1GLXViq%2BN8Bf3FohXUS0QGXTXiI%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/microsoft-logo-png-transparent.png?sp=r&st=2022-06-14T18:00:51Z&se=2023-06-15T02:00:51Z&spr=https&sv=2021-06-08&sr=b&sig=tLAB8IVpPzZAZk4Y1GLXViq%2BN8Bf3FohXUS0QGXTXiI%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/zenefits.png?sp=r&st=2022-08-03T17:14:30Z&se=2023-08-02T01:14:30Z&spr=https&sv=2021-06-08&sr=b&sig=JpQioO9fAEzLM2y4%2BmDkdk8TmX6nibYkwt6JiS%2F9G2M%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/zenefits.png?sp=r&st=2022-08-03T17:14:30Z&se=2023-08-02T01:14:30Z&spr=https&sv=2021-06-08&sr=b&sig=JpQioO9fAEzLM2y4%2BmDkdk8TmX6nibYkwt6JiS%2F9G2M%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/TriNet-logo.png?sp=r&st=2022-08-02T21:21:33Z&se=2023-08-02T05:21:33Z&spr=https&sv=2021-06-08&sr=b&sig=VhYJ9PbzKOEBK%2FW7fhl7cBQ%2FwYIrIuisXtyiLuGr8SI%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/TriNet-logo.png?sp=r&st=2022-08-02T21:21:33Z&se=2023-08-02T05:21:33Z&spr=https&sv=2021-06-08&sr=b&sig=VhYJ9PbzKOEBK%2FW7fhl7cBQ%2FwYIrIuisXtyiLuGr8SI%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/salesforce-logo.png?sp=r&st=2022-06-14T19:43:34Z&se=2023-06-15T03:43:34Z&spr=https&sv=2021-06-08&sr=b&sig=teHLFjL76mrNvSzrxKOqneQrdk18o4yLTMrH%2FKxAT78%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/salesforce-logo.png?sp=r&st=2022-06-14T19:43:34Z&se=2023-06-15T03:43:34Z&spr=https&sv=2021-06-08&sr=b&sig=teHLFjL76mrNvSzrxKOqneQrdk18o4yLTMrH%2FKxAT78%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/RingCentral-logo.png?sp=r&st=2022-06-14T19:42:18Z&se=2023-06-15T03:42:18Z&spr=https&sv=2021-06-08&sr=b&sig=6Ma7hcegKuDYLl7jBkneOW0738gJtCJ23fb3vzh8Rak%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/RingCentral-logo.png?sp=r&st=2022-06-14T19:42:18Z&se=2023-06-15T03:42:18Z&spr=https&sv=2021-06-08&sr=b&sig=6Ma7hcegKuDYLl7jBkneOW0738gJtCJ23fb3vzh8Rak%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/paylocity.png?sp=r&st=2022-11-22T22:22:00Z&se=2023-11-23T06:22:00Z&spr=https&sv=2021-06-08&sr=b&sig=WpRhgpnpoNjnMULaGpyqJqXRGQ%2FrGCbSJPdn1peP%2FaY%3D" alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/paylocity.png?sp=r&st=2022-11-22T22:22:00Z&se=2023-11-23T06:22:00Z&spr=https&sv=2021-06-08&sr=b&sig=WpRhgpnpoNjnMULaGpyqJqXRGQ%2FrGCbSJPdn1peP%2FaY%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/Paycor.png?sp=r&st=2022-08-03T17:03:57Z&se=2023-08-02T01:03:57Z&spr=https&sv=2021-06-08&sr=b&sig=rMQXPSlBR0siNIhQfg3ubzi43UhMkYqPfj6GjcBgITs%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/Paycor.png?sp=r&st=2022-08-03T17:03:57Z&se=2023-08-02T01:03:57Z&spr=https&sv=2021-06-08&sr=b&sig=rMQXPSlBR0siNIhQfg3ubzi43UhMkYqPfj6GjcBgITs%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/onelogin-logo.png?sp=r&st=2022-06-14T18:13:57Z&se=2023-06-15T02:13:57Z&spr=https&sv=2021-06-08&sr=b&sig=NJVaSD5dbyL3wI%2BcxXXIE8CfTu9BIFzo3qVpCiM7jIw%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/onelogin-logo.png?sp=r&st=2022-06-14T18:13:57Z&se=2023-06-15T02:13:57Z&spr=https&sv=2021-06-08&sr=b&sig=NJVaSD5dbyL3wI%2BcxXXIE8CfTu9BIFzo3qVpCiM7jIw%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/knowbe4.png?sp=r&st=2022-06-14T17:52:21Z&se=2023-06-15T01:52:21Z&spr=https&sv=2021-06-08&sr=b&sig=ZbsbcDe%2F7mPmZ%2Bgi5aMZoCxjDTACu5SvfVlQ71P1Vlc%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/knowbe4.png?sp=r&st=2022-06-14T17:52:21Z&se=2023-06-15T01:52:21Z&spr=https&sv=2021-06-08&sr=b&sig=ZbsbcDe%2F7mPmZ%2Bgi5aMZoCxjDTACu5SvfVlQ71P1Vlc%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/jobvite-logo.png?sp=r&st=2022-06-14T18:09:35Z&se=2023-06-15T02:09:35Z&spr=https&sv=2021-06-08&sr=b&sig=Yyxzy5e0umUF95q6Cdgx4k5tAqAmhtQVLgqVCADn4LM%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/jobvite-logo.png?sp=r&st=2022-06-14T18:09:35Z&se=2023-06-15T02:09:35Z&spr=https&sv=2021-06-08&sr=b&sig=Yyxzy5e0umUF95q6Cdgx4k5tAqAmhtQVLgqVCADn4LM%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/nice-incontact-logo.png?sp=r&st=2022-06-14T18:05:56Z&se=2023-06-15T02:05:56Z&spr=https&sv=2021-06-08&sr=b&sig=hQTMywuJA8dyzI6mLfG7cHFoSO3aDa74ff3mTSpTPxc%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/nice-incontact-logo.png?sp=r&st=2022-06-14T18:05:56Z&se=2023-06-15T02:05:56Z&spr=https&sv=2021-06-08&sr=b&sig=hQTMywuJA8dyzI6mLfG7cHFoSO3aDa74ff3mTSpTPxc%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/gusto.png?sp=r&st=2022-08-02T21:34:06Z&se=2023-08-02T05:34:06Z&spr=https&sv=2021-06-08&sr=b&sig=IXUKwU3OcoxxNlRVX5Rz5xP2r6%2FSzD%2FEacMV9GWKGVU%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/gusto.png?sp=r&st=2022-08-02T21:34:06Z&se=2023-08-02T05:34:06Z&spr=https&sv=2021-06-08&sr=b&sig=IXUKwU3OcoxxNlRVX5Rz5xP2r6%2FSzD%2FEacMV9GWKGVU%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/frontapp.png?sp=r&st=2022-06-14T18:03:50Z&se=2023-06-15T02:03:50Z&spr=https&sv=2021-06-08&sr=b&sig=Ipizl%2FUwuMMxNQTvuaLt2gma%2F1m5fuSTX6pVloGRPNk%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/frontapp.png?sp=r&st=2022-06-14T18:03:50Z&se=2023-06-15T02:03:50Z&spr=https&sv=2021-06-08&sr=b&sig=Ipizl%2FUwuMMxNQTvuaLt2gma%2F1m5fuSTX6pVloGRPNk%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/SAP_Concur.png?sp=r&st=2022-11-21T19:13:38Z&se=2023-11-22T03:13:38Z&spr=https&sv=2021-06-08&sr=b&sig=0lERyGVqgrJ653Hrt7RFvqYTyo8mqgZn7YQl%2BpTVJwU%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/SAP_Concur.png?sp=r&st=2022-11-21T19:13:38Z&se=2023-11-22T03:13:38Z&spr=https&sv=2021-06-08&sr=b&sig=0lERyGVqgrJ653Hrt7RFvqYTyo8mqgZn7YQl%2BpTVJwU%3D"
+								alt="" />
 						</div>
 						<!-- LOOP 2 -->
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/atlassian.png?sp=r&st=2022-06-14T17:58:49Z&se=2023-06-15T01:58:49Z&spr=https&sv=2021-06-08&sr=b&sig=SlgUfuUBRaarQYECZDlBHAf%2Fn%2FrJ3SK%2BRuYfOfjfTk4%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/atlassian.png?sp=r&st=2022-06-14T17:58:49Z&se=2023-06-15T01:58:49Z&spr=https&sv=2021-06-08&sr=b&sig=SlgUfuUBRaarQYECZDlBHAf%2Fn%2FrJ3SK%2BRuYfOfjfTk4%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/microsoft-logo-png-transparent.png?sp=r&st=2022-06-14T18:00:51Z&se=2023-06-15T02:00:51Z&spr=https&sv=2021-06-08&sr=b&sig=tLAB8IVpPzZAZk4Y1GLXViq%2BN8Bf3FohXUS0QGXTXiI%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/microsoft-logo-png-transparent.png?sp=r&st=2022-06-14T18:00:51Z&se=2023-06-15T02:00:51Z&spr=https&sv=2021-06-08&sr=b&sig=tLAB8IVpPzZAZk4Y1GLXViq%2BN8Bf3FohXUS0QGXTXiI%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/zenefits.png?sp=r&st=2022-08-03T17:14:30Z&se=2023-08-02T01:14:30Z&spr=https&sv=2021-06-08&sr=b&sig=JpQioO9fAEzLM2y4%2BmDkdk8TmX6nibYkwt6JiS%2F9G2M%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/zenefits.png?sp=r&st=2022-08-03T17:14:30Z&se=2023-08-02T01:14:30Z&spr=https&sv=2021-06-08&sr=b&sig=JpQioO9fAEzLM2y4%2BmDkdk8TmX6nibYkwt6JiS%2F9G2M%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/TriNet-logo.png?sp=r&st=2022-08-02T21:21:33Z&se=2023-08-02T05:21:33Z&spr=https&sv=2021-06-08&sr=b&sig=VhYJ9PbzKOEBK%2FW7fhl7cBQ%2FwYIrIuisXtyiLuGr8SI%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/TriNet-logo.png?sp=r&st=2022-08-02T21:21:33Z&se=2023-08-02T05:21:33Z&spr=https&sv=2021-06-08&sr=b&sig=VhYJ9PbzKOEBK%2FW7fhl7cBQ%2FwYIrIuisXtyiLuGr8SI%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/salesforce-logo.png?sp=r&st=2022-06-14T19:43:34Z&se=2023-06-15T03:43:34Z&spr=https&sv=2021-06-08&sr=b&sig=teHLFjL76mrNvSzrxKOqneQrdk18o4yLTMrH%2FKxAT78%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/salesforce-logo.png?sp=r&st=2022-06-14T19:43:34Z&se=2023-06-15T03:43:34Z&spr=https&sv=2021-06-08&sr=b&sig=teHLFjL76mrNvSzrxKOqneQrdk18o4yLTMrH%2FKxAT78%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/RingCentral-logo.png?sp=r&st=2022-06-14T19:42:18Z&se=2023-06-15T03:42:18Z&spr=https&sv=2021-06-08&sr=b&sig=6Ma7hcegKuDYLl7jBkneOW0738gJtCJ23fb3vzh8Rak%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/RingCentral-logo.png?sp=r&st=2022-06-14T19:42:18Z&se=2023-06-15T03:42:18Z&spr=https&sv=2021-06-08&sr=b&sig=6Ma7hcegKuDYLl7jBkneOW0738gJtCJ23fb3vzh8Rak%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/paylocity.png?sp=r&st=2022-11-22T22:22:00Z&se=2023-11-23T06:22:00Z&spr=https&sv=2021-06-08&sr=b&sig=WpRhgpnpoNjnMULaGpyqJqXRGQ%2FrGCbSJPdn1peP%2FaY%3D" alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/paylocity.png?sp=r&st=2022-11-22T22:22:00Z&se=2023-11-23T06:22:00Z&spr=https&sv=2021-06-08&sr=b&sig=WpRhgpnpoNjnMULaGpyqJqXRGQ%2FrGCbSJPdn1peP%2FaY%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/Paycor.png?sp=r&st=2022-08-03T17:03:57Z&se=2023-08-02T01:03:57Z&spr=https&sv=2021-06-08&sr=b&sig=rMQXPSlBR0siNIhQfg3ubzi43UhMkYqPfj6GjcBgITs%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/Paycor.png?sp=r&st=2022-08-03T17:03:57Z&se=2023-08-02T01:03:57Z&spr=https&sv=2021-06-08&sr=b&sig=rMQXPSlBR0siNIhQfg3ubzi43UhMkYqPfj6GjcBgITs%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/onelogin-logo.png?sp=r&st=2022-06-14T18:13:57Z&se=2023-06-15T02:13:57Z&spr=https&sv=2021-06-08&sr=b&sig=NJVaSD5dbyL3wI%2BcxXXIE8CfTu9BIFzo3qVpCiM7jIw%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/onelogin-logo.png?sp=r&st=2022-06-14T18:13:57Z&se=2023-06-15T02:13:57Z&spr=https&sv=2021-06-08&sr=b&sig=NJVaSD5dbyL3wI%2BcxXXIE8CfTu9BIFzo3qVpCiM7jIw%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/knowbe4.png?sp=r&st=2022-06-14T17:52:21Z&se=2023-06-15T01:52:21Z&spr=https&sv=2021-06-08&sr=b&sig=ZbsbcDe%2F7mPmZ%2Bgi5aMZoCxjDTACu5SvfVlQ71P1Vlc%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/knowbe4.png?sp=r&st=2022-06-14T17:52:21Z&se=2023-06-15T01:52:21Z&spr=https&sv=2021-06-08&sr=b&sig=ZbsbcDe%2F7mPmZ%2Bgi5aMZoCxjDTACu5SvfVlQ71P1Vlc%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/jobvite-logo.png?sp=r&st=2022-06-14T18:09:35Z&se=2023-06-15T02:09:35Z&spr=https&sv=2021-06-08&sr=b&sig=Yyxzy5e0umUF95q6Cdgx4k5tAqAmhtQVLgqVCADn4LM%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/jobvite-logo.png?sp=r&st=2022-06-14T18:09:35Z&se=2023-06-15T02:09:35Z&spr=https&sv=2021-06-08&sr=b&sig=Yyxzy5e0umUF95q6Cdgx4k5tAqAmhtQVLgqVCADn4LM%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/nice-incontact-logo.png?sp=r&st=2022-06-14T18:05:56Z&se=2023-06-15T02:05:56Z&spr=https&sv=2021-06-08&sr=b&sig=hQTMywuJA8dyzI6mLfG7cHFoSO3aDa74ff3mTSpTPxc%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/nice-incontact-logo.png?sp=r&st=2022-06-14T18:05:56Z&se=2023-06-15T02:05:56Z&spr=https&sv=2021-06-08&sr=b&sig=hQTMywuJA8dyzI6mLfG7cHFoSO3aDa74ff3mTSpTPxc%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/gusto.png?sp=r&st=2022-08-02T21:34:06Z&se=2023-08-02T05:34:06Z&spr=https&sv=2021-06-08&sr=b&sig=IXUKwU3OcoxxNlRVX5Rz5xP2r6%2FSzD%2FEacMV9GWKGVU%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/gusto.png?sp=r&st=2022-08-02T21:34:06Z&se=2023-08-02T05:34:06Z&spr=https&sv=2021-06-08&sr=b&sig=IXUKwU3OcoxxNlRVX5Rz5xP2r6%2FSzD%2FEacMV9GWKGVU%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/frontapp.png?sp=r&st=2022-06-14T18:03:50Z&se=2023-06-15T02:03:50Z&spr=https&sv=2021-06-08&sr=b&sig=Ipizl%2FUwuMMxNQTvuaLt2gma%2F1m5fuSTX6pVloGRPNk%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/frontapp.png?sp=r&st=2022-06-14T18:03:50Z&se=2023-06-15T02:03:50Z&spr=https&sv=2021-06-08&sr=b&sig=Ipizl%2FUwuMMxNQTvuaLt2gma%2F1m5fuSTX6pVloGRPNk%3D"
+								alt="" />
 						</div>
 						<div class="slide">
-							<img class="logo-img-top" src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/SAP_Concur.png?sp=r&st=2022-11-21T19:13:38Z&se=2023-11-22T03:13:38Z&spr=https&sv=2021-06-08&sr=b&sig=0lERyGVqgrJ653Hrt7RFvqYTyo8mqgZn7YQl%2BpTVJwU%3D"  alt="" />
+							<img class="logo-img-top"
+								src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/SAP_Concur.png?sp=r&st=2022-11-21T19:13:38Z&se=2023-11-22T03:13:38Z&spr=https&sv=2021-06-08&sr=b&sig=0lERyGVqgrJ653Hrt7RFvqYTyo8mqgZn7YQl%2BpTVJwU%3D"
+								alt="" />
 						</div>
 					</div>
 				</div>
 			</section>
-			
+
 
 			<section class="testimonials section">
 				<div class="testimonials-shape testimonials-shape-1">
@@ -748,13 +819,24 @@
 						</div>
 						<div class="footer-form newsletter-form field field-grouped">
 							<div class="control control-expanded">
-								<input style="border-radius:10px;" class="input" type="email" name="email"
-									placeholder="Your best email&hellip;">
+								<input style="border-radius:10px;" class="input" type="email" required name="email"
+									id="emailform" placeholder="Your best email&hellip;">
 							</div>
 							<div class="control">
-								<a style="border-radius:10px;" class="button button-primary button-block button-shadow"
-									href="#">Early access</a>
+								<button onclick="sendemail()" type="submit" style="border-radius:10px;"
+									class="button button-primary button-block">Early access</button>
 							</div>
+
+						</div>
+						<div id="formaterror" style="display: none;">
+							<p style="color:#cc5d62;padding:10px" class="section-paragraph">
+								Check Email Format
+							</p>
+						</div>
+						<div id="subsuccess" style="display: none;">
+							<p style="color:#6cc9ca;padding:10px" class="section-paragraph">
+								Submission Received
+							</p>
 						</div>
 					</div>
 				</div>

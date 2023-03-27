@@ -91,3 +91,22 @@
     heroAnimation.play()
   }
 }())
+
+function sendemail() {
+  let input = document.getElementById('emailform').value;
+  let checker = Boolean
+  if (/^\w+([\+.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    .test(input)) {
+    checker = true
+    var successelement = document.getElementById("subsuccess");
+    successelement.style.display = "block";
+    var element = document.getElementById("formaterror");
+    element.style.display = "none";
+  } else {
+    checker = false
+    var element = document.getElementById("formaterror");
+    element.style.display = "block";
+  }
+  const output = document.getElementById('output');
+  output.innerText = checker;
+}
