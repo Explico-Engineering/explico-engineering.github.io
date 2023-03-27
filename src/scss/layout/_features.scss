@@ -41,7 +41,7 @@
 .feature-inner {
     position: relative;
     height: 100%;
-    background: #FDFDFE;
+    background: color(bg, 1);;
     padding: 48px 24px 72px;
 
     &::before {
