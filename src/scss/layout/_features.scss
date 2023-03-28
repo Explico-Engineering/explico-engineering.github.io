@@ -8,8 +8,9 @@
 		position: absolute;
 		left: 0;
 		bottom: 0;
-		background: color(bg, 2);
-		background: linear-gradient(to bottom, color(bg, 2), rgba(color(bg, 2), 0));
+		top: 5vh;
+		background: color(bg, 1);
+		background: linear-gradient(to bottom, color(bg, 1), rgba(color(bg, 1), 0));
 	}
 }
 

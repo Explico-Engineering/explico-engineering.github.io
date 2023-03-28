@@ -33,10 +33,10 @@ $color: (
 // Typography ---------------------------------
 // --------------------------------------------
 $font__family: (
-	base: '"Heebo", sans-serif', // font-family(base)
-	heading: 'Fira Sans, serif', // font-family(heading)
-	code: 'Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace', // font-family(code)
-	pre: '"Courier 10 Pitch", Courier, monospace' // font-family(pre)
+	base: 'system-ui', // font-family(base)
+	heading: 'system-ui', // font-family(heading)
+	code: 'system-ui', // font-family(code)
+	pre: 'system-ui' // font-family(pre)
 );
 
 $font__sizes: (
