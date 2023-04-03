@@ -123,12 +123,13 @@ const sendemail = async () => {
 }
 
 const sendemail2 = async () => {
-  let inputname = document.getElementById('emailformname').value;
+  let inputfirstname = document.getElementById('emailformfirstname').value;
+  let inputlastname = document.getElementById('emailformlastname').value;
   let inputemail = document.getElementById('emailformemail').value;
   let inputcompany = document.getElementById('emailformcompany').value;
   if (/^\w+([\+.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     .test(inputemail)) {
-    if (inputname == '' || inputcompany == '') {
+    if (inputfirstname == '' || inputlastname == '' || inputcompany == '') {
       // console.log('SENDING')
 
       var successelement = document.getElementById("subsuccess2");
@@ -143,10 +144,18 @@ const sendemail2 = async () => {
       var spinnerelement = document.getElementById("submitspinner");
       spinnerelement.style.display = "block";
 
-
-      let bodytext = `<head><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"></head><body><p>Hi ${inputname},<br><br> Thank you for your interest in User HQ! Before scheduling a demo, we'd love to meet for a quick chat to introduce ourselves and learn more about ${inputcompany}. What does your availability look like next week?</p><p>Looking forward to meeting,<br>Chase Logan</p><br><a href="https://www.explico.io"><img style="width:64px; height:64px; margin-top:15px;"src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/transparent_square.png?sp=r&st=2022-08-12T19:34:14Z&se=2023-08-13T03:34:14Z&spr=https&sv=2021-06-08&sr=b&sig=ooJASRLO5dgvDKYN9%2FmTUKTRevTCqjidXqIazuWu5D8%3D"></a></body>`
+      // send confirmation email to client who submitted
+      let bodytext = `<head><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"></head><body><p>Hi ${inputfirstname},<br><br> Thank you for your interest in User HQ! Before scheduling a demo, we'd love to meet for a quick chat to introduce ourselves and learn more about ${inputcompany}. What does your availability look like next week?</p><p>Looking forward to meeting,<br>Chase Logan</p><br><a href="https://www.explico.io"><img style="width:64px; height:64px; margin-top:15px;"src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/transparent_square.png?sp=r&st=2022-08-12T19:34:14Z&se=2023-08-13T03:34:14Z&spr=https&sv=2021-06-08&sr=b&sig=ooJASRLO5dgvDKYN9%2FmTUKTRevTCqjidXqIazuWu5D8%3D"></a></body>`
       let payload = { 'subject': "Thank you for your interest in User HQ!", 'recipients': inputemail, 'body': bodytext }
       let emailerpost = await axios.post('https://prod-10.centralus.logic.azure.com:443/workflows/0b29a89e49d54f68b232e5a948d7b92d/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=LmVxu1W0gmaqsx7nctq1h8qLmgRXZZNhYTnxkclIkSM', payload)
+
+
+      //send info to chase and zack
+      let infobodytext = `<head><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"></head><body><p>First Name: ${inputfirstname}<br> Last Name: ${inputlastname}<br> Company: ${inputcompany} <br> Email: ${inputemail}</p><br><a href="https://www.explico.io"><img style="width:64px; height:64px; margin-top:15px;"src="https://wgautomatestorage.blob.core.windows.net/uhq-logos/transparent_square.png?sp=r&st=2022-08-12T19:34:14Z&se=2023-08-13T03:34:14Z&spr=https&sv=2021-06-08&sr=b&sig=ooJASRLO5dgvDKYN9%2FmTUKTRevTCqjidXqIazuWu5D8%3D"></a></body>`
+      let infopayload = { 'subject': `Demo Submission Notification: ${inputfirstname} ${inputlastname}`, 'recipients': `chase.logan@explico.io;zack.mryyan@explico.io`, 'body': infobodytext }
+      let infoemailerpost = await axios.post('https://prod-10.centralus.logic.azure.com:443/workflows/0b29a89e49d54f68b232e5a948d7b92d/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=LmVxu1W0gmaqsx7nctq1h8qLmgRXZZNhYTnxkclIkSM', infopayload)
+
+
       // console.log(emailerpost)
       buttonelement.style.display = "block";
       spinnerelement.style.display = "none";
