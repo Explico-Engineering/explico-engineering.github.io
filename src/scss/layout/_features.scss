@@ -44,6 +44,7 @@
     height: 100%;
     background: color(bg, 1);;
     padding: 48px 24px 72px;
+	border-radius: 5px;
 
     &::before {
         content: '';
@@ -62,7 +63,7 @@
     margin: 0 auto;
 	width: 64px;
 	height: 64px;
-	border-radius: 10px;
+	border-radius: 5px;
 
 	// &::before {
 	// 	content: '';

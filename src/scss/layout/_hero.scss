@@ -1,16 +1,18 @@
 .hero {
 	text-align: center;
-    padding-top: 40px;
+	margin-top: 4vh;
 }
 
 .hero-paragraph {
 	@include font-size(4, mobile, true, true, true);
-	@if ( get-font-size(4, desktop) != get-font-size(4, mobile) ) {
-		@include media( '>medium' ) {
+
+	@if (get-font-size(4, desktop) !=get-font-size(4, mobile)) {
+		@include media('>medium') {
 			@include font-size(4, desktop, true, true, true);
 		}
 	}
-    margin-bottom: 40px;
+
+	margin-bottom: 40px;
 }
 
 .hero-form {
@@ -20,12 +22,12 @@
 
 .hero-illustration {
 	position: relative;
-    margin-top: 48px;
+	margin-top: 48px;
 }
 
 .hero-shape {
 	display: none;
-    position: absolute;
+	position: absolute;
 }
 
 .hero-main-shape {
@@ -36,12 +38,12 @@
 	}
 }
 
-@include media( '>medium' ) {
+@include media('>medium') {
 
-    .hero {
+	.hero {
 		text-align: left;
-        padding-top: 160px;
-    }
+		padding-top: 160px;
+	}
 
 	.hero-inner {
 		/* Split hero in two half */
@@ -85,10 +87,32 @@
 	}
 }
 
-@include media( '>large' ) {
+@include media('>large') {
 
-    .hero-copy {
-        padding-right: 92px;
-        min-width: 620px;
-    }
+	.hero-copy {
+		padding-right: 92px;
+		min-width: 620px;
+	}
+}
+
+
+
+.stats-rounded {
+
+	border-radius: 5px;
+	color: #272e69;
+	background: #fff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
+	height: 10vh;
+	margin: 10px
+}
+
+.features-rounded {
+
+	border-radius: 5px;
+	color: #272e69;
+	background: #f8f8f8;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
+	height: auto;
+	margin: 10px
 }

@@ -7,13 +7,12 @@
         }
     }
     @include font-weight(bold);
-	text-transform: uppercase;
     line-height: 16px;
     text-decoration: none !important;
-    background-color: #6cc9ca;
-    color: #6cc9ca !important;
+    background-color: #6c757d;
+    color: #ffffff !important;
     border: none;
-    border-radius: 2px;
+    border-radius: 5px;
     cursor: pointer;
     justify-content: center;
     padding: 16px 32px;
@@ -26,7 +25,7 @@
     }
 
     &::before {
-        border-radius: 2px;
+        border-radius: 5px;
     }
 }
 
@@ -51,3 +50,33 @@
 .button-block {
     display: flex;
 }
+
+
+.btn-blue {
+    color: #F6F6F6;
+    background: #272e69;
+    border-radius: 5px;
+    justify-content: center;
+    height: 48px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.btn-grey {
+    color: white;
+    background: #6c757d;
+    border: 0px solid #6cc9ca;
+    border-radius: 5px;
+    margin: 0px;
+    padding: 5px 10px; /* Adjust padding to make the button smaller */
+    font-size: 14px; /* Adjust font size to make the text smaller */
+    width: auto; /* Let the button's width adjust to its content */
+    height: auto; /* Let the button's height adjust to its content */
+    justify-content: center;
+    text-align: center;
+}
+
+.btn-grey:hover {
+    background-color: #6c757d;
+    color:#272e69;
+  }
